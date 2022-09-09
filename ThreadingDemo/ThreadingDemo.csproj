@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ThreadingDemo.MutexDemo</StartupObject>
+    <StartupObject>ThreadingDemo.SemaphoreDemo</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -53,6 +53,7 @@
     <Compile Include="MutexWithReleaseDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SemaphoreDemo.cs" />
     <Compile Include="SyncDemoUsingLock.cs" />
     <Compile Include="Threadtypes.cs" />
   </ItemGroup>

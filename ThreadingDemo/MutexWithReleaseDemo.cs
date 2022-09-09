@@ -8,7 +8,7 @@ namespace ThreadingDemo
 {
     class MutexWithReleaseDemo
     {
-        private Mutex mutex = new Mutex();
+        private static Mutex mutex = new Mutex();
         const int limits = 1;
         const int threads = 4;
 
@@ -21,9 +21,14 @@ namespace ThreadingDemo
         }
         static void UseCode()
         {
-            mutex.WaitOne();
-
-            Console.WriteLine("Use code has  goig to "    );
+            mutex.WaitOne();   // Wait until it is safe to enter.  
+            Console.WriteLine("{0} has entered in the code",
+                Thread.CurrentThread.Name);
+            // Place code to access non-reentrant resources here.  
+            Thread.Sleep(500);    // Wait until it is safe to enter.  
+            Console.WriteLine("{0} is leaving the code\r\n",
+                Thread.CurrentThread.Name);
+            mutex.ReleaseMutex();    // Release the Mutex.  
 
 
         }
@@ -31,6 +36,13 @@ namespace ThreadingDemo
 
         static void Main(string[] args)
         {
+            for (int i = 0; i < threads; i++)
+            {
+                Thread t = new Thread(new ThreadStart(ThreadsDemo));
+                t.Name = String.Format("Thread{0}", i + 1);
+                t.Start();
+            }
+            Console.Read();
 
         }
     }

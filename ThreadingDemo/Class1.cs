@@ -27,24 +27,24 @@ namespace ThreadingDemo
         }
         static void Main(string[] args)
         {
-            //ThreadAliveAndStates();
+            ThreadAliveAndStates();
 
 
-            Thread t1 = new Thread(new ThreadStart(M2));
-            t1.Name = "T1 Thread";
+            //Thread t1 = new Thread(new ThreadStart(M2));
+            //t1.Name = "T1 Thread";
 
-            Thread t2 = new Thread(M2);
-            t2.Name = "T2 Thread";
-            Thread t3 = new Thread(M2);
-            t3.Name = "T3 Thread";
-            t2.Priority = ThreadPriority.Highest;
-            t1.Priority = ThreadPriority.Normal;
-            t3.Priority = ThreadPriority.Lowest;
-            t2.Start();
-            t1.Start();
-            //t1.Join();
+            //Thread t2 = new Thread(M2);
+            //t2.Name = "T2 Thread";
+            //Thread t3 = new Thread(M2);
+            //t3.Name = "T3 Thread";
+            //t2.Priority = ThreadPriority.Highest;
+            //t1.Priority = ThreadPriority.Normal;
+            //t3.Priority = ThreadPriority.Lowest;
+            //t2.Start();
+            //t1.Start();
+            ////t1.Join();
            
-            t3.Start();
+            //t3.Start();
 
                  
 
