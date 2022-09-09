@@ -22,6 +22,7 @@ namespace ThreadingDemo
         static void UseCode()
         {
             mutex.WaitOne();
+
             Console.WriteLine("Use code has  goig to "    );
 
 
